@@ -297,60 +297,7 @@
   </div>
 </header>
 	    
-	    <script type="application/javascript">
-    window.maxConfig = {
-     global: {
-         onLoadTimeout: 10, //optional
-         player: {
-           pid: '5c6445e38fcaa9317146c514', // Engadget Ad Unit
-           bcid: '564f3144ff690c0a7c285e51', // Engadget
-         },
-     },
-     strategies: [
-       {
-         //www.engadget.com
-         type: 'INSERT',
-         cssSelector: 'div.js-notMobileReferredByFbTw  div > p:nth-of-type(2)',
-         toggle: false,
-         insertAfter: false,
-         injectIfPlayerAlreadyExists: false,
-         conditionFunc: () => {
-           const excludeMetaTags = [
-             'review',
-             'unboxing',
-             'preview',
-             'podcast', //also:
-             'podcasts',
-             'liveblog',
-             'thebuyerguide', // also:
-             'buyer guide', 'buyer guides', 'BuyerGuide', 'BuyerGuides', 'buyers guide', 'buyers guides', 'BuyersGuide', 'BuyersGuides',
-             'buyerguide', 'buyersguide',
-             'interview',
-             'hands-on',
-             'howto',
-             'editorial',
-             'contest',
-             'column',
-             'exclusive', // could not find references
-             // from @-prefix list
-             'features',
-             'feature',
-             'handson',
-             'impressions',
-             'featuredvideo',
-           ];
-           const excludeTagExistsInPage = !!Array.from(document.head.querySelectorAll('meta.swiftype'))
-             .find(m => excludeMetaTags.indexOf(m.content) !== -1);
-          
-           if (excludeTagExistsInPage) {
-             return false;
-           }
-           return true;
-         }
-       }],
- }
-</script>
-<script src="https://s3.amazonaws.com/vdb-cdn-files/prod/max-suite/34.a2ef451/max.js"></script>
+	  
 	    
 <div class="o-sticky_header@tp-__spacer"></div>
 
@@ -1193,6 +1140,39 @@
         
     <!-- footer -->
           <footer class="o-article_block">
+		    <script type="application/javascript">
+    window.maxConfig = {
+     global: {
+         onLoadTimeout: 10, //optional
+         player: {
+           pid: '5c6445e38fcaa9317146c514', // Engadget Ad Unit
+           bcid: '564f3144ff690c0a7c285e51', // Engadget
+         },
+     },
+     strategies: [
+       {
+         //www.engadget.com
+         type: 'INSERT',
+         cssSelector: 'div.js-notMobileReferredByFbTw  div > p:nth-of-type(2)',
+         toggle: false,
+         insertAfter: false,
+         injectIfPlayerAlreadyExists: false,
+         conditionFunc: () => {
+           const excludeMetaTags = [
+             'review',
+           ];
+           const excludeTagExistsInPage = !!Array.from(document.head.querySelectorAll('meta.swiftype'))
+             .find(m => excludeMetaTags.indexOf(m.content) !== -1);
+          
+           if (excludeTagExistsInPage) {
+             return false;
+           }
+           return true;
+         }
+       }],
+ }
+</script>
+<script src="https://s3.amazonaws.com/vdb-cdn-files/prod/max-suite/34.a2ef451/max.js"></script>
           <div class="grid@tl+ mt-n40">
               <div class="grid@tl+__cell col-8-of-12@tl+ pb-80@tp+ pb-120@d ">                        <div class="pb-35 border-top mt-20 mt-35@s pt-35 pt-30@m pt-25@s pb-25@s break-out@s">
                             <section class="t-meta c-gray-3">
